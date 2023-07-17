@@ -1,0 +1,380 @@
+:root {
+	--syntax-anchor: hsl(60, 42%, 24%);
+	--syntax-background: hsl(0, 0%, 88%);
+	--syntax-boolean: hsl(207, 61%, 36%);
+	--syntax-cdata: hsl(0, 0%, 50%);
+	--syntax-class: hsl(168, 53%, 28%);
+	--syntax-comment: hsl(101, 29%, 32%);
+	--syntax-const: hsl(201, 98%, 20%);
+	--syntax-css: hsl(17, 47%, 36%);
+	--syntax-entity: hsl(207, 61%, 36%);
+	--syntax-function: hsl(60, 42%, 24%);
+	--syntax-highlight: hsl(45, 75%, 13%);
+	--syntax-highlight-shadow: hsl(45, 88%, 27%);
+	--syntax-html: hsl(0, 0%, 17%);
+	--syntax-important: hsl(207, 61%, 36%);
+	--syntax-js-ts: hsl(201, 98%, 20%);
+	--syntax-keyword: hsl(207, 61%, 36%);
+	--syntax-number: hsl(99, 28%, 27%);
+	--syntax-op-arrow: hsl(207, 61%, 36%);
+	--syntax-operator: hsl(0, 0%, 17%);
+	--syntax-punctuation: hsl(0, 0%, 17%);
+	--syntax-regex: hsl(0, 53%, 38%);
+	--syntax-rule: hsl(305, 35%, 35%);
+	--syntax-selection: hsl(210, 52%, 69%);
+	--syntax-selector: hsl(41, 53%, 30%);
+	--syntax-string: hsl(17, 47%, 36%);
+	--syntax-tag: hsl(207, 61%, 36%);
+	--syntax-tag-punc: hsl(0, 0%, 30%);
+	--syntax-text: hsl(0, 0%, 17%);
+	--syntax-text-inline: hsl(348, 67%, 42%);
+}
+
+.dark {
+	--syntax-anchor: hsl(60, 42%, 76%);
+	--syntax-background: hsl(0, 0%, 12%);
+	--syntax-boolean: hsl(207, 61%, 59%);
+	--syntax-cdata: hsl(0, 0%, 50%);
+	--syntax-class: hsl(168, 53%, 55%);
+	--syntax-comment: hsl(101, 29%, 47%);
+	--syntax-const: hsl(201, 98%, 80%);
+	--syntax-css: hsl(17, 47%, 64%);
+	--syntax-entity: hsl(207, 61%, 59%);
+	--syntax-function: hsl(60, 42%, 76%);
+	--syntax-highlight: hsl(45, 75%, 87%);
+	--syntax-highlight-shadow: hsl(45, 88%, 73%);
+	--syntax-html: hsl(0, 0%, 83%);
+	--syntax-important: hsl(207, 61%, 59%);
+	--syntax-js-ts: hsl(201, 98%, 80%);
+	--syntax-keyword: hsl(207, 61%, 59%);
+	--syntax-number: hsl(99, 28%, 73%);
+	--syntax-op-arrow: hsl(207, 61%, 59%);
+	--syntax-operator: hsl(0, 0%, 83%);
+	--syntax-punctuation: hsl(0, 0%, 83%);
+	--syntax-regex: hsl(0, 53%, 62%);
+	--syntax-rule: hsl(305, 35%, 65%);
+	--syntax-selection: hsl(210, 52%, 31%);
+	--syntax-selector: hsl(41, 53%, 67%);
+	--syntax-string: hsl(17, 47%, 64%);
+	--syntax-tag: hsl(207, 61%, 59%);
+	--syntax-tag-punc: hsl(0, 0%, 60%);
+	--syntax-text: hsl(0, 0%, 83%);
+	--syntax-text-inline: hsl(348, 67%, 58%);
+}
+
+pre[class*='language-'],
+code[class*='language-'] {
+	/* color: #d4d4d4; */
+	color: var(--syntax-text);
+	font-size: 13px;
+	text-shadow: none;
+	font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono', 'Courier New', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*='language-']::selection,
+code[class*='language-']::selection,
+pre[class*='language-'] *::selection,
+code[class*='language-'] *::selection {
+	text-shadow: none;
+	/* background: #264f78; */
+	background: var(--syntax-selection);
+}
+
+@media print {
+	pre[class*='language-'],
+	code[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+pre[class*='language-'] {
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
+	/* background: #1e1e1e; */
+	background: var(--syntax-background);
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em 0.3em;
+	border-radius: 0.3em;
+	/* color: #db4c69; */
+	color: var(--syntax-text-inline);
+	/* background: #1e1e1e; */
+	background: var(--syntax-background);
+}
+/*********************************************************
+* Tokens
+*/
+.namespace {
+	opacity: 0.7;
+}
+
+.token.doctype .token.doctype-tag {
+	/* color: #569cd6; */
+	color: var(--syntax-tag);
+}
+
+.token.doctype .token.name {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.comment,
+.token.prolog {
+	/* color: #6a9955; */
+	color: var(--syntax-comment);
+}
+
+.token.punctuation,
+.language-html .language-css .token.punctuation,
+.language-html .language-javascript .token.punctuation {
+	/* color: #d4d4d4; */
+	color: var(--syntax-punctuation);
+}
+
+.token.number,
+.token.symbol,
+.token.inserted,
+.token.unit {
+	/* color: #b5cea8; */
+	color: var(--syntax-number);
+}
+
+.token.string,
+.token.char,
+.token.builtin,
+.token.deleted {
+	/* color: #ce9178; */
+	color: var(--syntax-string);
+}
+
+.language-css .token.string.url {
+	text-decoration: underline;
+}
+
+.token.operator {
+	/* color: #d4d4d4; */
+	color: var(--syntax-operator);
+}
+
+.token.operator.arrow {
+	/* color: #569cd6; */
+	color: var(--syntax-op-arrow);
+}
+
+.token.atrule {
+	/* color: #ce9178; */
+	color: var(--syntax-string);
+}
+
+.token.atrule .token.rule {
+	/* color: #c586c0; */
+	color: var(--syntax-rule);
+}
+
+.token.atrule .token.url {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.atrule .token.url .token.function {
+	/* color: #dcdcaa; */
+	color: var(--syntax-function);
+}
+
+.token.atrule .token.url .token.punctuation {
+	/* color: #d4d4d4; */
+	color: var(--syntax-punctuation);
+}
+
+.token.keyword {
+	/* color: #569cd6; */
+	color: var(--syntax-keyword);
+}
+
+.token.keyword.module,
+.token.keyword.control-flow {
+	/* color: #c586c0; */
+	color: var(--syntax-rule);
+}
+
+.token.function,
+.token.function .token.maybe-class-name {
+	/* color: #dcdcaa; */
+	color: var(--syntax-function);
+}
+
+.token.regex {
+	/* color: #d16969; */
+	color: var(--syntax-regex);
+}
+
+.token.important {
+	/* color: #569cd6; */
+	color: var(--syntax-important);
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.constant {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.class-name,
+.token.maybe-class-name {
+	/* color: #4ec9b0; */
+	color: var(--syntax-class);
+}
+
+.token.console {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.parameter {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.interpolation {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.punctuation.interpolation-punctuation {
+	/* color: #569cd6; */
+	color: var(--syntax-op-arrow);
+}
+
+.token.boolean {
+	/* color: #569cd6; */
+	color: var(--syntax-boolean);
+}
+
+.token.property,
+.token.variable,
+.token.imports .token.maybe-class-name,
+.token.exports .token.maybe-class-name {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.selector {
+	/* color: #d7ba7d; */
+	color: var(--syntax-selector);
+}
+
+.token.escape {
+	/* color: #d7ba7d; */
+	color: var(--syntax-selector);
+}
+
+.token.tag {
+	/* color: #569cd6; */
+	color: var(--syntax-tag);
+}
+
+.token.tag .token.punctuation {
+	/* color: #808080; */
+	color: var(--syntax-tag-punc);
+}
+
+.token.cdata {
+	/* color: #808080; */
+	color: var(--syntax-cdata);
+}
+
+.token.attr-name {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.attr-value,
+.token.attr-value .token.punctuation {
+	/* color: #ce9178; */
+	color: var(--syntax-string);
+}
+
+.token.attr-value .token.punctuation.attr-equals {
+	/* color: #d4d4d4; */
+	color: var(--syntax-punctuation);
+}
+
+.token.entity {
+	/* color: #569cd6; */
+	color: var(--syntax-entity);
+}
+
+.token.namespace {
+	/* color: #4ec9b0; */
+	color: var(--syntax-class);
+}
+/*********************************************************
+* Language Specific
+*/
+
+pre[class*='language-javascript'],
+code[class*='language-javascript'],
+pre[class*='language-jsx'],
+code[class*='language-jsx'],
+pre[class*='language-typescript'],
+code[class*='language-typescript'],
+pre[class*='language-tsx'],
+code[class*='language-tsx'] {
+	/* color: #9cdcfe; */
+	color: var(--syntax-js-ts);
+}
+
+pre[class*='language-css'],
+code[class*='language-css'] {
+	/* color: #ce9178; */
+	color: var(--syntax-css);
+}
+
+pre[class*='language-html'],
+code[class*='language-html'] {
+	/* color: #d4d4d4; */
+	color: var(--syntax-html);
+}
+
+.language-regex .token.anchor {
+	/* color: #dcdcaa; */
+	color: var(--syntax-anchor);
+}
+
+.language-html .token.punctuation {
+	/* color: #808080; */
+	color: var(--syntax-tag-punc);
+}
+/*********************************************************
+* Line highlighting
+*/
+pre[class*='language-'] > code[class*='language-'] {
+	position: relative;
+	z-index: 1;
+}
+
+.line-highlight.line-highlight {
+	/* background: #f7ebc6; */
+	background: var(--syntax-highlight);
+	/* box-shadow: inset 5px 0 0 #f7d87c; */
+	box-shadow: inset 5px 0 0 var(--syntax-highlight-shadow);
+	z-index: 0;
+}

@@ -1,0 +1,380 @@
+:root {
+	--syntax-anchor: theme(colors.yellow.700);
+	--syntax-background: theme(colors.stone.200);
+	--syntax-boolean: theme(colors.blue.600);
+	--syntax-cdata: theme(colors.stone.500);
+	--syntax-class: theme(colors.emerald.800);
+	--syntax-comment: theme(colors.lime.800);
+	--syntax-const: theme(colors.sky.700);
+	--syntax-css: theme(colors.orange.800);
+	--syntax-entity: theme(colors.blue.600);
+	--syntax-function: theme(colors.yellow.600);
+	--syntax-highlight: theme(colors.yellow.700);
+	--syntax-highlight-shadow: theme(colors.yellow.600);
+	--syntax-html: theme(colors.stone.700);
+	--syntax-important: theme(colors.blue.600);
+	--syntax-js-ts: theme(colors.sky.700);
+	--syntax-keyword: theme(colors.violet.700);
+	--syntax-number: theme(colors.lime.700);
+	--syntax-op-arrow: theme(colors.blue.600);
+	--syntax-operator: theme(colors.stone.700);
+	--syntax-punctuation: theme(colors.stone.600);
+	--syntax-regex: theme(colors.rose.600);
+	--syntax-rule: theme(colors.fuchsia.700);
+	--syntax-selection: theme(colors.sky.200);
+	--syntax-selector: theme(colors.amber.600);
+	--syntax-string: theme(colors.amber.800);
+	--syntax-tag: theme(colors.blue.600);
+	--syntax-tag-punc: theme(colors.stone.500);
+	--syntax-text: theme(colors.stone.700);
+	--syntax-text-inline: theme(colors.rose.600);
+}
+
+.dark {
+	--syntax-anchor: theme(colors.yellow.200); /* color: #dcdcaa; */
+	--syntax-background: theme(colors.stone.900); /* background: #1e1e1e; */
+	--syntax-boolean: theme(colors.blue.400); /* color: #569cd6; */
+	--syntax-cdata: theme(colors.stone.500); /* color: #808080; */
+	--syntax-class: theme(colors.emerald.400); /* color: #4ec9b0; */
+	--syntax-comment: theme(colors.lime.600); /* color: #6a9955; */
+	--syntax-const: theme(colors.sky.300); /* color: #9cdcfe; */
+	--syntax-css: theme(colors.orange.300); /* color: #ce9178; */
+	--syntax-entity: theme(colors.blue.400); /* color: #569cd6; */
+	--syntax-function: theme(colors.yellow.200); /* color: #dcdcaa; */
+	--syntax-highlight: theme(colors.yellow.200); /* background: #f7ebc6; */
+	--syntax-highlight-shadow: theme(colors.yellow.300); /* #f7d87c */
+	--syntax-html: theme(colors.stone.300); /* color: #d4d4d4; */
+	--syntax-important: theme(colors.blue.400); /* color: #569cd6; */
+	--syntax-js-ts: theme(colors.sky.300); /* color: #9cdcfe; */
+	--syntax-keyword: theme(colors.violet.400); /* color: #569cd6; */
+	--syntax-number: theme(colors.lime.300); /* color: #b5cea8; */
+	--syntax-op-arrow: theme(colors.blue.400); /* color: #569cd6; */
+	--syntax-operator: theme(colors.stone.300); /* color: #d4d4d4; */
+	--syntax-punctuation: theme(colors.stone.400); /* color: #d4d4d4; */
+	--syntax-regex: theme(colors.rose.400); /* color: #d16969; */
+	--syntax-rule: theme(colors.fuchsia.400); /* color: #c586c0; */
+	--syntax-selection: theme(colors.sky.800); /* background: #264f78; */
+	--syntax-selector: theme(colors.amber.300); /* color: #d7ba7d; */
+	--syntax-string: theme(colors.amber.600); /* color: #ce9178; */
+	--syntax-tag: theme(colors.blue.400); /* color: #569cd6; */
+	--syntax-tag-punc: theme(colors.stone.500); /* color: #808080; */
+	--syntax-text: theme(colors.stone.300); /* color: #d4d4d4; */
+	--syntax-text-inline: theme(colors.rose.400); /* color: #db4c69; */
+}
+
+pre[class*='language-'],
+code[class*='language-'] {
+	/* color: #d4d4d4; */
+	color: var(--syntax-text);
+	font-size: 13px;
+	text-shadow: none;
+	font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono', 'Courier New', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*='language-']::selection,
+code[class*='language-']::selection,
+pre[class*='language-'] *::selection,
+code[class*='language-'] *::selection {
+	text-shadow: none;
+	/* background: #264f78; */
+	background: var(--syntax-selection);
+}
+
+@media print {
+	pre[class*='language-'],
+	code[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+pre[class*='language-'] {
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
+	/* background: #1e1e1e; */
+	background: var(--syntax-background);
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em 0.3em;
+	border-radius: 0.3em;
+	/* color: #db4c69; */
+	color: var(--syntax-text-inline);
+	/* background: #1e1e1e; */
+	background: var(--syntax-background);
+}
+/*********************************************************
+* Tokens
+*/
+.namespace {
+	opacity: 0.7;
+}
+
+.token.doctype .token.doctype-tag {
+	/* color: #569cd6; */
+	color: var(--syntax-tag);
+}
+
+.token.doctype .token.name {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.comment,
+.token.prolog {
+	/* color: #6a9955; */
+	color: var(--syntax-comment);
+}
+
+.token.punctuation,
+.language-html .language-css .token.punctuation,
+.language-html .language-javascript .token.punctuation {
+	/* color: #d4d4d4; */
+	color: var(--syntax-punctuation);
+}
+
+.token.number,
+.token.symbol,
+.token.inserted,
+.token.unit {
+	/* color: #b5cea8; */
+	color: var(--syntax-number);
+}
+
+.token.string,
+.token.char,
+.token.builtin,
+.token.deleted {
+	/* color: #ce9178; */
+	color: var(--syntax-string);
+}
+
+.language-css .token.string.url {
+	text-decoration: underline;
+}
+
+.token.operator {
+	/* color: #d4d4d4; */
+	color: var(--syntax-operator);
+}
+
+.token.operator.arrow {
+	/* color: #569cd6; */
+	color: var(--syntax-op-arrow);
+}
+
+.token.atrule {
+	/* color: #ce9178; */
+	color: var(--syntax-string);
+}
+
+.token.atrule .token.rule {
+	/* color: #c586c0; */
+	color: var(--syntax-rule);
+}
+
+.token.atrule .token.url {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.atrule .token.url .token.function {
+	/* color: #dcdcaa; */
+	color: var(--syntax-function);
+}
+
+.token.atrule .token.url .token.punctuation {
+	/* color: #d4d4d4; */
+	color: var(--syntax-punctuation);
+}
+
+.token.keyword {
+	/* color: #569cd6; */
+	color: var(--syntax-keyword);
+}
+
+.token.keyword.module,
+.token.keyword.control-flow {
+	/* color: #c586c0; */
+	color: var(--syntax-rule);
+}
+
+.token.function,
+.token.function .token.maybe-class-name {
+	/* color: #dcdcaa; */
+	color: var(--syntax-function);
+}
+
+.token.regex {
+	/* color: #d16969; */
+	color: var(--syntax-regex);
+}
+
+.token.important {
+	/* color: #569cd6; */
+	color: var(--syntax-important);
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.constant {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.class-name,
+.token.maybe-class-name {
+	/* color: #4ec9b0; */
+	color: var(--syntax-class);
+}
+
+.token.console {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.parameter {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.interpolation {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.punctuation.interpolation-punctuation {
+	/* color: #569cd6; */
+	color: var(--syntax-op-arrow);
+}
+
+.token.boolean {
+	/* color: #569cd6; */
+	color: var(--syntax-boolean);
+}
+
+.token.property,
+.token.variable,
+.token.imports .token.maybe-class-name,
+.token.exports .token.maybe-class-name {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.selector {
+	/* color: #d7ba7d; */
+	color: var(--syntax-selector);
+}
+
+.token.escape {
+	/* color: #d7ba7d; */
+	color: var(--syntax-selector);
+}
+
+.token.tag {
+	/* color: #569cd6; */
+	color: var(--syntax-tag);
+}
+
+.token.tag .token.punctuation {
+	/* color: #808080; */
+	color: var(--syntax-tag-punc);
+}
+
+.token.cdata {
+	/* color: #808080; */
+	color: var(--syntax-cdata);
+}
+
+.token.attr-name {
+	/* color: #9cdcfe; */
+	color: var(--syntax-const);
+}
+
+.token.attr-value,
+.token.attr-value .token.punctuation {
+	/* color: #ce9178; */
+	color: var(--syntax-string);
+}
+
+.token.attr-value .token.punctuation.attr-equals {
+	/* color: #d4d4d4; */
+	color: var(--syntax-punctuation);
+}
+
+.token.entity {
+	/* color: #569cd6; */
+	color: var(--syntax-entity);
+}
+
+.token.namespace {
+	/* color: #4ec9b0; */
+	color: var(--syntax-class);
+}
+/*********************************************************
+* Language Specific
+*/
+
+pre[class*='language-javascript'],
+code[class*='language-javascript'],
+pre[class*='language-jsx'],
+code[class*='language-jsx'],
+pre[class*='language-typescript'],
+code[class*='language-typescript'],
+pre[class*='language-tsx'],
+code[class*='language-tsx'] {
+	/* color: #9cdcfe; */
+	color: var(--syntax-js-ts);
+}
+
+pre[class*='language-css'],
+code[class*='language-css'] {
+	/* color: #ce9178; */
+	color: var(--syntax-css);
+}
+
+pre[class*='language-html'],
+code[class*='language-html'] {
+	/* color: #d4d4d4; */
+	color: var(--syntax-html);
+}
+
+.language-regex .token.anchor {
+	/* color: #dcdcaa; */
+	color: var(--syntax-anchor);
+}
+
+.language-html .token.punctuation {
+	/* color: #808080; */
+	color: var(--syntax-tag-punc);
+}
+/*********************************************************
+* Line highlighting
+*/
+pre[class*='language-'] > code[class*='language-'] {
+	position: relative;
+	z-index: 1;
+}
+
+.line-highlight.line-highlight {
+	/* background: #f7ebc6; */
+	background: var(--syntax-highlight);
+	/* box-shadow: inset 5px 0 0 #f7d87c; */
+	box-shadow: inset 5px 0 0 var(--syntax-highlight-shadow);
+	z-index: 0;
+}

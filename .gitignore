@@ -1,0 +1,15 @@
+# Local Netlify folder
+.netlify
+
+# Dependency directory
+node_modules/
+
+# Sanity dist folder
+/studio/dist/
+
+# Svelte files
+/.svelte/
+/web/build
+
+# Env files
+.env*
