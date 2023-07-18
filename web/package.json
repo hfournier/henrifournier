@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@portabletext/svelte": "^2.0.0",
+		"@sanity/client": "^6.1.7",
 		"@sanity/image-url": "^1.0.2",
 		"@sveltejs/adapter-netlify": "^2.0.6",
 		"@sveltejs/kit": "^1.10.0",
