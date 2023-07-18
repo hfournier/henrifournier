@@ -1,7 +1,7 @@
-import sanityClient from '@sanity/client';
+import { createClient } from '@sanity/client';
 import { env } from '$env/dynamic/private';
 
-const client = sanityClient({
+const client = createClient({
 	projectId: env.SANITY_PROJECT_ID,
 	dataset: env.SANITY_DATASET,
 	apiVersion: '2022-10-17', // use current UTC date - see "specifying API version"!
