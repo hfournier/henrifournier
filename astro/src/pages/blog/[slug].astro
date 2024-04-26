@@ -1,0 +1,9 @@
+---
+import { type CollectionEntry } from "astro:content"
+
+type Blog = CollectionEntry<"blog">
+let b: Blog
+// type r = typeof b.data.tags
+type r = Blog['data']['tags']
+
+---

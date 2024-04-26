@@ -1,0 +1,21 @@
+---
+import HeadingHexagon from "@components/HeadingHexagon.astro"
+
+type Props = {
+	id: string
+}
+const { id, ...attrbs } = Astro.props
+---
+
+<section
+	{id}
+	class="relative grid min-h-screen place-content-center px-2 py-12 md:px-8 lg:px-12"
+	aria-label={id}
+	{...attrbs}
+>
+	<HeadingHexagon {id}>
+		<slot name="heading" slot="heading">Heading</slot>
+	</HeadingHexagon>
+
+	<slot />
+</section>
