@@ -3,9 +3,7 @@ import Section from "./Section.astro"
 import TeamMember from "./TeamMember.astro"
 ---
 
-<Section id="team">
-	<Fragment slot="heading">Meet the Team</Fragment>
-
+<Section id="team" heading="Meet the Team">
 	<p>
 		As a team of one, I am required to wear all the hats. This requires a wider range of skills and
 		the ability to see and realize the bigger picture. It's not without its challenges, but that
@@ -13,7 +11,7 @@ import TeamMember from "./TeamMember.astro"
 		below are actually wearing hats. Irony.
 	</p>
 	<div class="mt-16 grid w-full gap-12 md:grid-cols-2 lg:grid-cols-3">
-		<TeamMember>
+		<TeamMember title="Grand Fromage">
 			<Fragment slot="svg">
 				<svg
 					viewBox="0 0 550 920"
@@ -53,15 +51,12 @@ import TeamMember from "./TeamMember.astro"
 					></svg
 				>
 			</Fragment>
-			<Fragment slot="title">Grand Fromage</Fragment>
-			<Fragment slot="description">
 				The <a
 					class="text-primary-800 dark:text-primary-200"
 					href="https://en.wikipedia.org/wiki/Loonie">Loonie</a
 				> stops here. The whole team answers to me and I answer to you. Simple.
-			</Fragment>
 		</TeamMember>
-		<TeamMember>
+		<TeamMember title="Artist">
 			<Fragment slot="svg">
 				<svg
 					viewBox="0 0 550 920"
@@ -108,8 +103,6 @@ import TeamMember from "./TeamMember.astro"
 					></svg
 				>
 			</Fragment>
-			<Fragment slot="title">Artist</Fragment>
-			<Fragment slot="description">
 				After years of using tools from Adobe, I switched to <a
 					class="text-primary-800 dark:text-primary-200"
 					href="https://affinity.serif.com/designer/">Affinity Designer</a
@@ -122,9 +115,8 @@ import TeamMember from "./TeamMember.astro"
 					class="text-primary-800 dark:text-primary-200"
 					href="https://affinity.serif.com/publisher/">Publisher</a
 				>.
-			</Fragment>
 		</TeamMember>
-		<TeamMember>
+		<TeamMember title="Designer">
 			<Fragment slot="svg">
 				<svg
 					viewBox="0 0 550 920"
@@ -176,15 +168,12 @@ import TeamMember from "./TeamMember.astro"
 					></svg
 				>
 			</Fragment>
-			<Fragment slot="title">Designer</Fragment>
-			<Fragment slot="description">
 				I don't build websites from generic templates. I use <a
 					class="text-primary-800 dark:text-primary-200"
 					href="https://www.figma.com/">Figma</a
 				> to design your site from scratch.
-			</Fragment>
 		</TeamMember>
-		<TeamMember>
+		<TeamMember title="Developer">
 			<Fragment slot="svg">
 				<svg
 					viewBox="0 0 550 920"
@@ -228,15 +217,12 @@ import TeamMember from "./TeamMember.astro"
 					></svg
 				>
 			</Fragment>
-			<Fragment slot="title">Developer</Fragment>
-			<Fragment slot="description">
 				The role where I'm most in my element. Check out the <a
 					class="text-primary-800 dark:text-primary-200"
 					href="#experience">experience</a
 				> section for my evolution.
-			</Fragment>
 		</TeamMember>
-		<TeamMember>
+		<TeamMember title="Quality Control">
 			<Fragment slot="svg">
 				<svg
 					viewBox="0 0 550 920"
@@ -286,15 +272,12 @@ import TeamMember from "./TeamMember.astro"
 					></svg
 				>
 			</Fragment>
-			<Fragment slot="title">Quality Control</Fragment>
-			<Fragment slot="description">
 				Testing, testing, testing, and the best possible <a
 					class="text-primary-800 dark:text-primary-200"
 					href="https://developer.chrome.com/docs/lighthouse/overview/">Lighthouse</a
 				> scores. Guaranteed.
-			</Fragment>
 		</TeamMember>
-		<TeamMember>
+		<TeamMember title="Customer Support">
 			<Fragment slot="svg">
 				<svg
 					viewBox="0 0 550 920"
@@ -343,10 +326,7 @@ import TeamMember from "./TeamMember.astro"
 					></svg
 				>
 			</Fragment>
-			<Fragment slot="title">Customer Support</Fragment>
-			<Fragment slot="description">
 				I never have to check with someone and get back to you. I can address all issues directly.
-			</Fragment>
 		</TeamMember>
 	</div>
 </Section>

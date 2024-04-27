@@ -1,3 +1,9 @@
+---
+export type Props = {
+	title: string
+}
+const { title } = Astro.props
+---
 <div class="group grid grid-cols-3 grid-rows-3">
 	<div
 		class="[&:hover~_div:nth-child(10)]:tilt-up [&:hover~_div:nth-child(10)]:tilt-left col-start-1 row-start-1"
@@ -30,11 +36,9 @@
 			<slot name="svg" />
 		</div>
 		<div class="pt-2">
-			<h3 class="text-xl font-bold text-primary-600 dark:text-primary-400">
-				<slot name="title" />
-			</h3>
+			<h3 class="text-xl font-bold text-primary-600 dark:text-primary-400">{title}</h3>
 			<p class="text-sm text-grayish-900 dark:text-grayish-200">
-				<slot name="description" />
+				<slot />
 			</p>
 		</div>
 	</div>

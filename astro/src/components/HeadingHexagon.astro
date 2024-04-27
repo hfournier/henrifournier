@@ -6,11 +6,11 @@ const { id } = Astro.props
 const hexExpandId = `hexExpand-${id}`
 ---
 
-<div id={hexExpandId} class="hex-container group relative mx-auto mb-8 grid place-items-center">
+<div id={hexExpandId} data-hex-id={hexExpandId} class="hex-container group relative mx-auto mb-8 grid place-items-center">
 	<h2
 		class="text-center text-2xl font-medium opacity-0 motion-safe:group-[.expand]:animate-[fadeIn_250ms_ease-in-out_1000ms_forwards] motion-reduce:opacity-100 sm:text-3xl md:text-4xl"
 	>
-		<slot name="heading" />
+		<slot />
 	</h2>
 
 	<div
@@ -155,25 +155,29 @@ const hexExpandId = `hexExpand-${id}`
 	</div>
 </div>
 
-<script define:vars={{ hexExpandId }}>
-	let hexOnScroll
+<script>
+	document.addEventListener('astro:page-load', () => {
+		let hexOnScroll
 
-	const hexOptions = {
-		threshold: 0,
-		rootMargin: "0px 0px -100px 0px"
-	}
-	hexOnScroll = new IntersectionObserver((entries, hexOnScroll) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add("expand")
-				hexOnScroll.unobserve(entry.target)
-			}
-		})
-	}, hexOptions)
+const hexOptions = {
+	threshold: 0,
+	rootMargin: "0px 0px -100px 0px"
+}
+hexOnScroll = new IntersectionObserver((entries, hexOnScroll) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add("expand")
+			hexOnScroll.unobserve(entry.target)
+		}
+	})
+}, hexOptions)
 
-	const hexExpand = document.getElementById(hexExpandId)
-
+const hexes = document.querySelectorAll("[data-hex-id]")
+for (const hex of hexes) {
+	const hexExpand = document.getElementById(hex.id) as HTMLDivElement
 	hexOnScroll.observe(hexExpand)
+}
+})
 </script>
 
 <style>
