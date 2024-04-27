@@ -1,9 +1,29 @@
 ---
-import { type CollectionEntry } from "astro:content"
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
-type Blog = CollectionEntry<"blog">
-let b: Blog
-// type r = typeof b.data.tags
-type r = Blog['data']['tags']
+export const getStaticPaths = async () => {
+    const blogEntries = await getCollection("blog");
+    return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+} 
 
+const { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
+<BaseLayout>
+	<slot slot="head">
+		<title>
+			{entry.data.title} | Henri Fournier Dev | Kelowna, BC
+		</title>
+		<meta
+			name="description"
+			content={entry.data.description}
+		/>
+    </slot>
+<div class="prose">
+<h1>{entry.data.title}</h1>
+<Content />
+</div>
+</BaseLayout>

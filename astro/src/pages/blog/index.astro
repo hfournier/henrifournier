@@ -1,0 +1,21 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const blogs = await getCollection("blog");
+
+---
+
+<BaseLayout>
+	<slot slot="head">
+		<title>
+			Blog | Henri Fournier Dev | Kelowna, BC
+		</title>
+		<meta
+			name="description"
+			content="Blog posts on Astro, TailwindCSS and Sanity on Netlify"
+		/>
+        </slot>
+<h1 class="">Blog</h1>
+{blogs.map(blog => <a href={`/blog/${blog.slug}`}><h2>{blog.data.title}</h2></a>)}
+</BaseLayout>
